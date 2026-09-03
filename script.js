@@ -12,14 +12,20 @@ const teachers = [
  {id:"t9",name:"Archana Ma'am",image:"image/Archana_Sahu.png",role:"Teacher 09 • IT Faculty",subject:"Information Technology",department:"IT",journey:"Showing students how attention to detail turns good work into memorable work.",message:"The details become the difference.",achievement:"Detail & Craft Mentor",philosophy:"Care about the small things; they shape the whole experience.",memory:"The polished final submission that made everyone stop and smile."}
 ];
 const HODS=teachers.slice(0,2), FACULTY=teachers.slice(2);
+const STAFF=[
+ {id:"s1",name:"Shinde Sir",image:"image/shinde.png",role:"Staff 01 • Non-Teaching Staff",subject:"Student Support",department:"Department Services",journey:"Supporting the department behind the scenes and helping students and faculty keep moving forward.",message:"Every smooth day is built by people who care about the details.",achievement:"Department Support",philosophy:"Be dependable, approachable and ready to help.",memory:"The many small moments when a student found the help they needed."},
+ {id:"s2",name:"Chintamani Sir",image:"image/chintamani.png" ,role:"Staff 02 • Non-Teaching Staff",subject:"Student Support",department:"Department Services",journey:"Helping create a welcoming, organized and supportive environment across the department.",message:"A helpful presence can make a lasting difference.",achievement:"Student Services Support",philosophy:"Listen carefully, respond kindly and make every interaction count.",memory:"Seeing students feel more confident after a simple conversation."},
+ {id:"s3",name:"Dattatray Sir",image:"image/dattatray.png" ,role:"Staff 03 • Non-Teaching Staff",subject:"Department Support",department:"Department Services",journey:"Keeping the everyday rhythm of the department organized so learning can take center stage.",message:"Strong communities grow through everyday care.",achievement:"Campus Operations Support",philosophy:"Consistency and care are the foundation of a great department.",memory:"The quiet satisfaction of knowing everything was ready when it mattered."}
+];
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function portrait(t, label=""){return t.image?`<img src="${t.image}" alt="Portrait of ${t.name}" loading="lazy"><span class="num">${label}</span>`:`<span class="num">${label}</span><span class="initial">${t.name.split(" ").map(x=>x[0]).slice(0,2).join("")}</span>`}
-function card(t,i,leader=false){return `<article class="${leader?'leader-card':'teacher-card'} reveal" data-id="${t.id}" onclick="openProfile('${t.id}')"><div class="portrait">${portrait(t,leader?t.role.split(" •")[0]:"MENTOR "+String(i+1).padStart(2,"0"))}</div><div class="card-info"><p>${t.role}</p><h3>${t.name}</h3><p>${t.subject} • ${t.department}</p><div class="view">View Story <span>↗</span></div></div></article>`}
+function card(t,i,leader=false,staff=false){return `<article class="${leader?'leader-card':staff?'staff-card':'teacher-card'} reveal" data-id="${t.id}" onclick="openProfile('${t.id}')"><div class="portrait">${portrait(t,leader?t.role.split(" •")[0]:staff?"STAFF "+String(i+1).padStart(2,"0"):"MENTOR "+String(i+1).padStart(2,"0"))}</div><div class="card-info"><p>${t.role}</p><h3>${t.name}</h3><p>${t.subject} • ${t.department}</p><div class="view">View Story <span>↗</span></div></div></article>`}
 $("#leadersGrid").innerHTML=HODS.map((t,i)=>card(t,i,true)).join("");
 $("#teacherGrid").innerHTML=FACULTY.map((t,i)=>card(t,i)).join("");
+$("#staffGrid").innerHTML=STAFF.map((t,i)=>card(t,i,false,true)).join("");
 
-const all=teachers;
+const all=[...teachers,...STAFF];
 
 function openProfile(id){
  const t=all.find(x=>x.id===id);
