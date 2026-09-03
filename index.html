@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GuruVerse 2026 — a premium Teachers' Day experience created by students.">
+  <title>GuruVerse 2026 — Teachers' Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cinematic-intro" id="cinematicIntro" aria-label="GuruVerse opening">
+  <div class="intro-noise"></div>
+  <div class="intro-core">
+    <div class="intro-kicker"> PRESENTS</div>
+    <div class="intro-title">GURUVERSE <span>2026</span></div>
+    <div class="intro-status" id="introStatus">INITIALIZING MEMORY ARCHIVE</div>
+    <div class="intro-bar"><i id="introBar"></i></div>
+    <button class="intro-skip" id="skipIntro">SKIP INTRO ↗</button>
+  </div>
+</div>
+
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="progress"><span id="progressBar"></span></div>
+
+  <header class="nav">
+    <a class="brand" href="#home"><span>G</span> GURUVERSE <b>2026</b><small class="ved-mark"></small></a>
+    <div class="nav-actions"><button class="demo-launch" id="demoLaunch">PRESENTATION MODE ✦</button></div><button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="navLinks">
+      <a href="#leaders">Leaders</a><a href="#teachers">Teachers</a>
+      <a href="#ceremony">Ceremony</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">TEACHERS' DAY • 05 SEPTEMBER 2026</div>
+        <h1>The people who turned <em>classrooms</em> into journeys.</h1>
+        <p class="hero-sub">11 mentors. Hundreds of lessons. Thousands of memories. One unforgettable journey.</p>
+        <div class="actions">
+          <a class="btn primary" href="#teachers">Meet Our Mentors <span>→</span></a>
+        </div>
+      </div>
+      <div class="hero-orbit reveal">
+        <div class="orbit-ring ring-1"></div><div class="orbit-ring ring-2"></div>
+        <div class="hero-seal"><small>FOR THE ONES</small><strong>WHO<br>INSPIRED<br>US</strong><span>GURUVERSE • 2026</span></div>
+      </div>
+    </section>
+
+    <section class="intro section">
+      <div class="section-head reveal"><span class="section-kicker">01 / THE PEOPLE BEHIND IT ALL</span><h2>Meet the minds<br><em>who shaped ours.</em></h2></div>
+      <div class="stat-strip reveal"><div><strong>11</strong><span>Mentors</span></div><div><strong>∞</strong><span>Lessons</span></div><div><strong>2026</strong><span>A year to remember</span></div></div>
+    </section>
+
+    <section class="section" id="leaders">
+      <div class="section-head reveal"><span class="section-kicker">02 / LEADERSHIP</span><h2>Our Department<br><em>Leaders.</em></h2><p>Two people who guide the department, the faculty, and generations of students.</p></div>
+      <div class="leader-grid" id="leadersGrid"></div>
+    </section>
+
+    
+<section class="ultra-section universe-section" id="department-universes">
+  <div class="section-kicker">02.5 / DEPARTMENT UNIVERSES</div>
+  <div class="section-head">
+    <h2>Two departments.<br><em>Two different worlds.</em></h2>
+    <p>Step inside the two academic universes shaping this GuruVerse.</p>
+  </div>
+  <div class="universe-grid">
+    <article class="universe-card it-universe">
+      <div class="universe-orb">IT</div>
+      <div class="universe-content"><span>THE BUILDERS</span><h3>Information Technology</h3><p>Systems, foundations, interfaces and the people who turn ideas into something that actually works.</p><button class="btn ghost universe-jump" data-target="IT">EXPLORE IT →</button></div>
+    </article>
+    <article class="universe-card aiml-universe">
+      <div class="universe-orb">AI</div>
+      <div class="universe-content"><span>THE THINKERS</span><h3>Artificial Intelligence & Machine Learning</h3><p>Models, experiments, curiosity and the strange magic of teaching machines to learn.</p><button class="btn ghost universe-jump" data-target="AIML">EXPLORE AIML →</button></div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="teachers">
+      <div class="section-head reveal"><span class="section-kicker">03 / OUR MENTORS</span><h2>9 mentors.<br><em>9 stories.</em></h2><p>Every profile is built from one official faculty data source.</p></div>
+      <div class="teacher-grid" id="teacherGrid"></div>
+    </section>
+
+    
+<section class="ultra-section ceremony-section" id="ceremony">
+  <div class="ceremony-shell">
+    <div class="section-kicker">10 / THE GURUVERSE AWARDS</div>
+    <h2>A little ceremony<br><em>for a lot of impact.</em></h2>
+    <p id="ceremonyPrompt">Choose a category and reveal a mentor.</p>
+    <select id="ceremonyCategory">
+      <option>The Knowledge Architect</option>
+      <option>The Most Inspiring Mentor</option>
+      <option>The Classroom Legend</option>
+      <option>The Energy Machine</option>
+      <option>The Concept Master</option>
+      <option>The Student's Favorite</option>
+    </select>
+    <button class="btn primary" id="revealWinner">REVEAL MENTOR ✦</button>
+    <div class="winner-stage" id="winnerStage"><span>?</span><strong>AWARD AWAITING</strong></div>
+  </div>
+</section>
+
+<section class="final section">
+      <div class="final-mark">G</div>
+      <p class="quote">“A teacher takes a hand,<br>opens a mind,<br>and touches a heart.”</p>
+      <h2>Thank you,<br><em>teachers.</em> ❤️</h2><p class="made">GURUVERSE 2026<br><span>Made with ❤️ by the students</span><br><small class="ved-footer"> • DIGITAL EXPERIENCES</small></p>
+    </section>
+  </main>
+
+  <div class="modal" id="profileModal" aria-hidden="true"><div class="modal-inner"><button class="modal-close" id="modalClose">×</button><div id="profileContent"></div></div></div>
+  <div class="toast" id="toast"></div>
+
+<div class="demo-mode" id="demoMode" aria-hidden="true">
+  <div class="demo-backdrop"></div>
+  <div class="demo-top"><span> // GURUVERSE PRESENTATION MODE</span><button id="demoClose">ESC</button></div>
+  <div class="demo-stage">
+    <div class="demo-chapter" id="demoChapter">CHAPTER 01</div>
+    <h2 id="demoTitle">The people behind it all.</h2>
+    <p id="demoText">A guided 60-second tour through the GuruVerse experience.</p>
+    <div class="demo-progress"><i id="demoProgress"></i></div>
+    <div class="demo-controls"><button id="demoPrev">←</button><button class="demo-next" id="demoNext">NEXT →</button></div>
+  </div>
+  <div class="demo-hint">Keyboard: ← → to navigate · ESC to exit</div>
+</div>
+  <script src="script.js"></script>
+
+
+</body>
+</html>
